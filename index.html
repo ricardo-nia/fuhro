@@ -10,11 +10,12 @@
 <script>
     (function () {
         window.onload = function () {
-            new BlipChat()
+            blipClient = new BlipChat()
             .withAppKey('ZnVocm9zb3V0b3JvdXRlcjpmODYxMWI3ZS0wMGU1LTQwNWItOTU3ZC01YzJmOWYxYjRkMjc=')
             .withButton({"color":"#1d2549","icon":""})
             .withCustomCommonUrl('https://chat.blip.ai/')
-            .build();
+            blipClient.build()
+            window.setTimeout(function() { blipClient.toogleChat() }, 5000);
         }
     })();
 </script>
