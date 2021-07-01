@@ -1,23 +1,42 @@
-<!doctype html>
+<!DOCTYPE html>
+<meta charset="utf-8" />
 <html>
 
-<body>
-    <h1>Fuhro Souto</h1>
-</body>
-
-<script src="https://unpkg.com/blip-chat-widget" type="text/javascript">
-</script>
-<script>
-    (function () {
-        window.onload = function () {
-            blipClient = new BlipChat()
-            .withAppKey('ZnVocm9zb3V0b3JvdXRlcjpmODYxMWI3ZS0wMGU1LTQwNWItOTU3ZC01YzJmOWYxYjRkMjc=')
-            .withButton({"color":"#1d2549","icon":""})
-            .withCustomCommonUrl('https://chat.blip.ai/')
-            blipClient.build()
-            window.setTimeout(function() { blipClient.toogleChat() }, 5000);
+<head>
+    <title>Fuhro Souto</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
         }
-    })();
-</script>
+
+        ​ .full-height {
+            height: 100%;
+        }
+    </style>
+    ​
+</head>
+
+<body>
+    ​
+    <div class="full-height" id="blip"></div>
+    ​
+    <script src="https://unpkg.com/blip-chat-widget" type="text/javascript">
+    </script>
+    <script>
+        (function () {
+            window.onload = function () {
+                new BlipChat()
+                    .withAppKey('ZnVocm9zb3V0b3JvdXRlcjpmODYxMWI3ZS0wMGU1LTQwNWItOTU3ZC01YzJmOWYxYjRkMjc=')
+                    .withButton({ "color": "#1d2549", "icon": "" })
+                    .withCustomCommonUrl('https://chat.blip.ai/')
+                    .withTarget("blip")
+                    .build();
+            }
+        })();
+    </script>
+    ​
+</body>
 
 </html>
